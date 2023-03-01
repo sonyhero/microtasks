@@ -22,19 +22,23 @@ import {Button} from "./components/Button";
 ]*/
 
 function App() {
-const ButtonFoo1=(subs: string, age: number)=>{
-    console.log(subs, age)
+const ButtonFoo1=(subs: string, age: number, adress: string)=>{
+    console.log(subs, age, adress)
 }
 const ButtonFoo2=(subs: string)=>{
     console.log(subs)
+}
+const Stupid=()=>{
+    console.log('Stupid Button')
 }
     return (
 
         <div className='App'>
             {/*<button>MyYouTubeChanel-2</button>*/}
             {/*<button>MyYouTubeChanel-3</button>*/}
-            <Button name={'MyYouTubeChanel-1'} callBack={()=>ButtonFoo1('I am Anton', 21)}/>
+            <Button name={'MyYouTubeChanel-1'} callBack={()=>ButtonFoo1('I am Anton', 21, 'Minsk')}/>
             <Button name={'MyYouTubeChanel-2'} callBack={()=>ButtonFoo2('I am Ivan')}/>
+            <Button name={'Stupid Button'} callBack={Stupid}/>
         </div>
     )
 }
