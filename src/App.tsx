@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import {Button} from "./components/Button";
+//import {Button} from "./components/Button";
 // import {Header} from "./site/Header";
 // import {Body} from "./site/Body";
 // import {Footer} from "./site/Footer";
@@ -27,8 +27,8 @@ import {Button} from "./components/Button";
 <Button name={'MyYouTubeChanel-2'} callBack={()=>ButtonFoo2('I am Ivan')}/>
 <Button name={'Stupid Button'} callBack={Stupid}/>*/
 
-/*const ButtonFoo1=(subs: string, age: number, adress: string)=>{
-    console.log(subs, age, adress)
+/*const ButtonFoo1=(subs: string, age: number, address: string)=>{
+    console.log(subs, age, address)
 }
 const ButtonFoo2=(subs: string)=>{
     console.log(subs)
@@ -37,7 +37,7 @@ const Stupid=()=>{
     console.log('Stupid Button')
     }*/
 
-function App() {
+/*function App() {
 
     //let a = 1
     let[a, setA]=useState(1)
@@ -57,6 +57,37 @@ function App() {
             <button onClick={onClickHandler}>number</button>
             <button onClick={onClickHandlerZero}>0</button>
         </div>
+    )
+}*/
+
+function App() {
+
+    const [money, setMoney] = useState([
+        { banknots: 'Dollars', value: 100, number: ' a1234567890' },
+        { banknots: 'Dollars', value: 50, number: ' z1234567890' },
+        { banknots: 'RUBLS', value: 100, number: ' w1234567890' },
+        { banknots: 'Dollars', value: 100, number: ' e1234567890' },
+        { banknots: 'Dollars', value: 50, number: ' c1234567890' },
+        { banknots: 'RUBLS', value: 100, number: ' r1234567890' },
+        { banknots: 'Dollars', value: 50, number: ' x1234567890' },
+        { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
+    ])
+
+    return (
+
+        <ul>
+            {
+                money.map((el)=>{
+                    return(
+                        <li>
+                            <span>{el.banknots}</span>
+                            <span>{el.number}</span>
+                            <span>{el.value}</span>
+                        </li>
+                    )
+                })
+            }
+        </ul>
     )
 }
 
