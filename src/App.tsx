@@ -21,12 +21,14 @@ import './App.css';
 ]*/
 
 function App() {
-
+    const myFirstSubscriber = () => {
+        console.log('Hello! I am Vasia!')
+    }
     return (
         <div className='App'>
-            <button>MyYouTubeChanel-1</button>
+            {/*<button onClick={(event) => {console.log('Hello!')}}>MyYouTubeChanel-1</button>*/}
+            <button onClick={myFirstSubscriber}>MyYouTubeChanel-2</button>
         </div>
-
     );
 }
 
