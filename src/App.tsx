@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import {FilterComponent} from "./filter/FilterComponent";
 //import {Button} from "./components/Button";
 // import {Header} from "./site/Header";
 // import {Body} from "./site/Body";
@@ -60,7 +61,7 @@ const Stupid=()=>{
     )
 }*/
 
-type FilterType = 'all'|'rubl'|'dollar'
+export type FilterType = 'all'|'rubl'|'dollar'
 
 function App() {
 
@@ -91,24 +92,7 @@ function App() {
 
     return (
         <>
-            <ul>
-                {
-                    currentMoney.map((el, i) => {
-                        return (
-                            <li key={i}>
-                                <span> {el.banknots}</span>
-                                <span> {el.value}</span>
-                                <span> {el.number}</span>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-            <div>
-                <button onClick={() => onClickFilterHandler('all')}>all</button>
-                <button onClick={() => onClickFilterHandler('rubl')}>RUBLS</button>
-                <button onClick={() => onClickFilterHandler('dollar')}>Dollars</button>
-            </div>
+            <FilterComponent currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}/>
         </>
 
     )
