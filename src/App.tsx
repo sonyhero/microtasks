@@ -21,15 +21,24 @@ import './App.css';
 ]*/
 
 function App() {
-    const myFirstSubscriber = () => {
-        console.log('Hello! I am Vasia!')
+    // /*const myFirstSubscriber = (event:MouseEvent<HTMLButtonElement>) => {
+    //     console.log('Hello! I am Vasia!')
+    // }
+    // const mySecondSubscriber = (event:MouseEvent<HTMLButtonElement>) => {
+    //     console.log('Hello! I am Ivan!')
+    // }*/
+    //
+    const onClickHandler = (name: string) => {
+        console.log(name)
     }
     return (
         <div className='App'>
             {/*<button onClick={(event) => {console.log('Hello!')}}>MyYouTubeChanel-1</button>*/}
-            <button onClick={myFirstSubscriber}>MyYouTubeChanel-2</button>
+            <button onClick={(event) =>onClickHandler('Vasya')}>MyYouTubeChanel-2</button>
+            <button onClick={(event) =>onClickHandler('Ivan')}>MyYouTubeChanel-3</button>
+
         </div>
-    );
+    )
 }
 
 export default App;
