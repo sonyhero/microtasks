@@ -60,34 +60,57 @@ const Stupid=()=>{
     )
 }*/
 
+type FilterType = 'all'|'rubl'|'dollar'
+
 function App() {
 
     const [money, setMoney] = useState([
-        { banknots: 'Dollars', value: 100, number: ' a1234567890' },
-        { banknots: 'Dollars', value: 50, number: ' z1234567890' },
-        { banknots: 'RUBLS', value: 100, number: ' w1234567890' },
-        { banknots: 'Dollars', value: 100, number: ' e1234567890' },
-        { banknots: 'Dollars', value: 50, number: ' c1234567890' },
-        { banknots: 'RUBLS', value: 100, number: ' r1234567890' },
-        { banknots: 'Dollars', value: 50, number: ' x1234567890' },
-        { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
+        {banknots: 'Dollars', value: 100, number: ' a1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' z1234567890'},
+        {banknots: 'RUBLS', value: 100, number: ' w1234567890'},
+        {banknots: 'Dollars', value: 100, number: ' e1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' c1234567890'},
+        {banknots: 'RUBLS', value: 100, number: ' r1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' x1234567890'},
+        {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
 
-    return (
+    const [nameButton, setNameButton] = useState<FilterType>('all')
 
-        <ul>
-            {
-                money.map((el)=>{
-                    return(
-                        <li>
-                            <span>{el.banknots}</span>
-                            <span>{el.number}</span>
-                            <span>{el.value}</span>
-                        </li>
-                    )
-                })
-            }
-        </ul>
+    let currentMoney = money
+    if (nameButton === 'rubl') {
+        currentMoney = money.filter((el) => el.banknots === 'RUBLS')
+    }
+    if (nameButton === 'dollar') {
+        currentMoney = money.filter((el) => el.banknots === 'Dollars')
+    }
+
+    const onClickFilterHandler = (nameButton: FilterType) => {
+        setNameButton(nameButton)
+    }
+
+    return (
+        <>
+            <ul>
+                {
+                    currentMoney.map((el, i) => {
+                        return (
+                            <li key={i}>
+                                <span> {el.banknots}</span>
+                                <span> {el.value}</span>
+                                <span> {el.number}</span>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            <div>
+                <button onClick={() => onClickFilterHandler('all')}>all</button>
+                <button onClick={() => onClickFilterHandler('rubl')}>RUBLS</button>
+                <button onClick={() => onClickFilterHandler('dollar')}>Dollars</button>
+            </div>
+        </>
+
     )
 }
 
