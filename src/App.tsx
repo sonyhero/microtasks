@@ -21,8 +21,13 @@ import {Button} from "./components/Button";
     {id: 11, name: "Christopher", age: 100},
 ]*/
 
-function App() {
-const ButtonFoo1=(subs: string, age: number, adress: string)=>{
+/*<button>MyYouTubeChanel-2</button>
+<button>MyYouTubeChanel-3</button>
+<Button name={'MyYouTubeChanel-1'} callBack={()=>ButtonFoo1('I am Anton', 21, 'Minsk')}/>
+<Button name={'MyYouTubeChanel-2'} callBack={()=>ButtonFoo2('I am Ivan')}/>
+<Button name={'Stupid Button'} callBack={Stupid}/>*/
+
+/*const ButtonFoo1=(subs: string, age: number, adress: string)=>{
     console.log(subs, age, adress)
 }
 const ButtonFoo2=(subs: string)=>{
@@ -30,15 +35,20 @@ const ButtonFoo2=(subs: string)=>{
 }
 const Stupid=()=>{
     console.log('Stupid Button')
-}
+    }*/
+
+function App() {
+
+    let a = 1
+    const onClickHandler = () => {
+        a++
+    }
+
     return (
 
         <div className='App'>
-            {/*<button>MyYouTubeChanel-2</button>*/}
-            {/*<button>MyYouTubeChanel-3</button>*/}
-            <Button name={'MyYouTubeChanel-1'} callBack={()=>ButtonFoo1('I am Anton', 21, 'Minsk')}/>
-            <Button name={'MyYouTubeChanel-2'} callBack={()=>ButtonFoo2('I am Ivan')}/>
-            <Button name={'Stupid Button'} callBack={Stupid}/>
+            <h1>{a}</h1>
+            <button onClick={onClickHandler}>number</button>
         </div>
     )
 }
