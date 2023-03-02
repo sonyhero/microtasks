@@ -6,14 +6,15 @@ import App from './App';
 import AppSite from "./AppFolder/AppSite";
 import AppStudents from "./AppFolder/AppStudents";
 import AppCars from "./AppFolder/AppCars";
-import AppUseState from "./AppFolder/AppUseState";
+import AppButton from "./AppFolder/AppButton";
+import AppNewButton from "./AppFolder/AppNewButton";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <AppUseState/>
+        <AppNewButton/>
     </React.StrictMode>
 );
 
