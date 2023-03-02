@@ -1,30 +1,35 @@
 import React from "react";
 
-type CarsType = {
+type CarComponent = {
+    cars: CarType[]
+}
+
+type CarType = {
     manufacturer: string
     model: string
 }
 
-type CarComponentType = {
-    cars: CarsType[]
-}
-
-export const CarComponent = (props: CarComponentType) => {
+export const CarComponent = (props: CarComponent) => {
     const cars = props.cars.map((el, i) => {
         return (
-            <tr key={1 + i}>
+            <tr key={i}>
                 <td>{el.manufacturer}</td>
                 <td>{el.model}</td>
-            </tr>
+                </tr>
         )
     })
+
     return (
         <table>
+        <thead>
             <tr>
-                <th>Manufacturer</th>
-                <th>Model</th>
-            </tr>
-            {cars}
+                <th>manufacturer</th>
+                <th>model</th>
+        </tr>
+        </thead>
+        <tbody>
+        {cars}
+        </tbody>
         </table>
     )
 }
