@@ -20,7 +20,7 @@ function AppNewButton() {
             <button>MyYouTubeChanel-2</button>*/}
             <NewButton name={'MyYouTubeChanel-1'} callback={()=>Button1Foo('Anton', 31)}/>
             <NewButton name={'MyYouTubeChanel-2'} callback={()=>Button2Foo('Ivan')}/>
-            <NewButton name={'MyYouTubeChanel-3'} callback={StupidButton}/>
+            <NewButton name={'Stupid button'} callback={StupidButton}/>
         </div>
     )
 }

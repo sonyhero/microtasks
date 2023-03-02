@@ -8,13 +8,15 @@ import AppStudents from "./AppFolder/AppStudents";
 import AppCars from "./AppFolder/AppCars";
 import AppButton from "./AppFolder/AppButton";
 import AppNewButton from "./AppFolder/AppNewButton";
+import AppUseState from "./AppFolder/AppUseState";
+import AppFilter from "./AppFolder/AppFilter";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <AppNewButton/>
+        <AppFilter/>
     </React.StrictMode>
 );
 
