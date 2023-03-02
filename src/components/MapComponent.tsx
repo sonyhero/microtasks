@@ -10,7 +10,7 @@ type NewComponentType = {
     students: Array<StudentsType>
 }
 
-export const NewComponent = (props: NewComponentType) => {
+export const MapComponent = (props: NewComponentType) => {
     const topCars = [
         {manufacturer: 'BMW', model: 'm5cs'},
         {manufacturer: 'Mercedes', model: 'e63s'},
