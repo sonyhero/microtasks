@@ -2,7 +2,7 @@ import {CarComponent} from "../components/CarComponent";
 
 
 function AppCars() {
-    const cars = [
+    const topcars = [
         {manufacturer: 'BMW', model: 'm5cs'},
         {manufacturer: 'Mercedes', model: 'e63s'},
         {manufacturer: 'Audi', model: 'rs6'}
@@ -10,7 +10,7 @@ function AppCars() {
 
     return (
         <>
-            <CarComponent cars={cars}/>
+            <CarComponent cars={topcars}/>
         </>
     )
 

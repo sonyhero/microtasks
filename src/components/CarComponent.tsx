@@ -1,10 +1,10 @@
 import React from "react";
 
 type CarComponent = {
-    cars: CarType[]
+    cars: CarsType[]
 }
 
-type CarType = {
+type CarsType = {
     manufacturer: string
     model: string
 }
