@@ -1,9 +1,11 @@
 import React from 'react';
+import {NameButton} from '../AppFolder/AppTodolist';
 
 type TodolistType = {
     title: string
     tasks: Array<TasksType>
     deleteTasks: (id: number)=>void
+    filterTasks: (buttonName: NameButton)=>void
 }
 
 export type TasksType = {
@@ -33,9 +35,9 @@ export function Todolist(props: TodolistType) {
             {list}
         </ul>
         <div>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
+            <button onClick={()=>props.filterTasks('All')}>All</button>
+            <button onClick={()=>props.filterTasks('Active')}>Active</button>
+            <button onClick={()=>props.filterTasks('Completed')}>Completed</button>
         </div>
     </div>
 }
