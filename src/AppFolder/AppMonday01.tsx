@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import '../AppFolder/AppCSS/AppTodolist.css';
+import {TasksMonday01} from '../components/TasksMonday01';
 
 
 // Hi Guys!
@@ -9,7 +10,7 @@ import './App.css';
 
 
 
-function App() {
+function AppMonday01() {
     const data1 = {
         title: "What to do",
         tasks: [
@@ -126,12 +127,13 @@ function App() {
 
     return (
         <div className="App">
-
+            <TasksMonday01 data={data1}/>
+            <TasksMonday01 data={data2}/>
         </div>
     );
 }
 
-export default App;
+export default AppMonday01;
 
 
 
