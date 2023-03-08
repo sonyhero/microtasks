@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FilterValuesType} from './Components/AppMonday02';
+import {FilterValuesType} from '../AppMonday02';
 
 export type TaskType = {
     id: number

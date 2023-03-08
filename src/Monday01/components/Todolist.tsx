@@ -1,5 +1,6 @@
 import React from 'react';
-import {NameButton} from '../AppFolder/AppTodolist';
+import {NameButton} from '../AppTodolist';
+
 
 type TodolistType = {
     title: string
