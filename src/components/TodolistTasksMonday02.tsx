@@ -50,6 +50,11 @@ export function TodolistTasksMonday02(props: PropsType) {
             }}>
                 Completed
             </button>
+            <button onClick={() => {
+                props.changeFilter('first 3')
+            }}>
+                First 3
+            </button>
         </div>
     </div>
 }
