@@ -1,6 +1,7 @@
-import {Header} from "../site/Header";
-import {Body} from "../site/Body";
-import {Footer} from "../site/Footer";
+import {Header} from './Site/Header';
+import {Footer} from './Site/Footer';
+import {Body} from './Site/Body';
+
 
 function AppSite() {
     return (

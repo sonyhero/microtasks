@@ -1,5 +1,5 @@
 import React from "react";
-import {FilterType} from "../AppFolder/AppFilter";
+import {FilterType} from '../AppFilter';
 
 type ButtonFilterType = {
     currentMoney: Money[]

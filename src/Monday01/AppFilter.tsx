@@ -1,6 +1,7 @@
 import '../App.css'
 import {useState} from "react";
-import {ButtonFilter} from "../components/ButtonFilter";
+import {ButtonFilter} from './Components/ButtonFilter';
+
 
 export type FilterType = 'all'|'usd'|'rub'
 

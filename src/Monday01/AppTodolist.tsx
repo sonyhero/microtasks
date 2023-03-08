@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../AppFolder/AppCSS/AppTodolist.css';
-import {TasksType, Todolist} from '../components/Todolist';
+import {TasksType, Todolist} from './Components/Todolist';
+
 
 export type NameButton = 'All'|'Active'|'Completed'
 function App() {

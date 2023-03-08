@@ -1,4 +1,5 @@
-import {StudentsComponent} from "../components/StudentsComponent";
+import {StudentsComponent} from './Components/StudentsComponent';
+
 
 function AppSite() {
     const students = [

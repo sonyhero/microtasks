@@ -1,5 +1,6 @@
 import '../App.css'
-import {NewButton} from "../components/NewButton";
+import {NewButton} from './Components/NewButton';
+
 
 function AppNewButton() {
     const Button1Foo=(subscriber:string, age:number)=>{

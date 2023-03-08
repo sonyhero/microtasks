@@ -1,6 +1,7 @@
 import React from 'react';
 import '../AppFolder/AppCSS/AppTodolist.css';
-import {TasksMonday01} from '../components/TasksMonday01';
+import {TasksMonday01} from './Components/TasksMonday01';
+
 
 
 // Hi Guys!
