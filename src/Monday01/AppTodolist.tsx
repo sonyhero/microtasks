@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../AppFolder/AppCSS/AppTodolist.css';
 import {TasksType, Todolist} from './Components/Todolist';
 
 

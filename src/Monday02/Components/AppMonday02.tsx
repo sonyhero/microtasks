@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import '../AppFolder/AppCSS/AppTodolist.css';
-import {TodolistTasksMonday02} from '../components/TodolistTasksMonday02';
+import '../../App.css'
+import {TaskType, TodolistTasksMonday02} from '../TodolistTasksMonday02';
 
-export type FilterValuesType = |'all' | 'active' | 'completed'|'first 3';
+export type FilterValuesType = | 'all' | 'active' | 'completed' | 'first 3';
 
 //Hi guys!
 //1. Let's create a 'DELETE ALL TASKS' button, and place it above the filter buttons
@@ -25,9 +25,10 @@ export type FilterValuesType = |'all' | 'active' | 'completed'|'first 3';
 //     setFilter(value);
 // }
 
+
 function AppMonday02() {
 
-    let [tasks, setTasks] = useState([
+    let [tasks, setTasks] = useState<Array<TaskType>>([
         {id: 1, title: 'HTML&CSS', isDone: true},
         {id: 2, title: 'JS', isDone: true},
         {id: 3, title: 'ReactJS', isDone: false},
@@ -35,20 +36,25 @@ function AppMonday02() {
         {id: 5, title: 'GraphQL', isDone: false},
     ]);
 
+
+
+    function deleteAll() {
+        setTasks([])
+    }
+
     function removeTask(id: number) {
         let filteredTasks = tasks.filter(t => t.id != id);
         setTasks(filteredTasks);
     }
 
-
-
     return (
         <div className="App">
-            <TodolistTasksMonday02 title="What to learn"
-                                   tasks={tasksForTodolist}
-                                   removeTask={removeTask}
-                                   changeFilter={changeFilter}
-                                   deleteAll={deleteAll}/>
+            <TodolistTasksMonday02
+                title="What to learn"
+                tasks={tasks}
+                removeTask={removeTask}
+                /*changeFilter={changeFilter}*/
+                deleteAll={deleteAll}/>
         </div>
     );
 }
