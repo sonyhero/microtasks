@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import AppMonday02 from './AppFolder/AppMonday02';
+import AppMonday02 from './Monday02/Components/AppMonday02';
 // import AppSite from "./AppFolder/AppSite";
 // import AppStudents from "./AppFolder/AppStudents";
 // import AppCars from "./AppFolder/AppCars";
