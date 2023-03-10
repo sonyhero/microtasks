@@ -1,6 +1,11 @@
 import {useState} from 'react';
 import {FullInput} from './Components/FullInput';
 
+type MessageType = {
+    message: string
+}
+
+type MessageUseState = MessageType[]
 export const AppInput = () => {
 
     let [message, setMessage] = useState(
@@ -13,7 +18,8 @@ export const AppInput = () => {
     )
 
     const addMessage = (title: string) => {
-        console.log(title)
+        let newMessage = {message: title}
+        setMessage([newMessage,...message])
     }
 
     return (
