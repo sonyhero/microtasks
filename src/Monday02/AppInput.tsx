@@ -12,10 +12,14 @@ export const AppInput = () => {
         ]
     )
 
+    const addMessage = (title: string) => {
+        console.log(title)
+    }
+
     return (
         <div className={'App'}>
-            <FullInput/>
-            {message.map((el, i)=>{
+            <FullInput addMessage={addMessage}/>
+            {message.map((el, i) => {
                 return (
                     <div key={i}>{el.message}</div>
                 )
