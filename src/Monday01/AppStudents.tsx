@@ -1,4 +1,4 @@
-import {StudentsComponent} from './Components/StudentsComponent';
+import {StudentsComponent} from './components/StudentsComponent';
 
 
 function AppSite() {

@@ -2,22 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-//import App from './App';
-import AppMonday02 from './Monday02/AppMonday02';
-// import AppSite from "./AppFolder/AppSite";
-// import AppStudents from "./AppFolder/AppStudents";
-// import AppCars from "./AppFolder/AppCars";
-// import AppButton from "./AppFolder/AppButton";
-// import AppNewButton from "./AppFolder/AppNewButton";
-// import AppUseState from "./AppFolder/AppUseState";
-// import AppFilter from "./AppFolder/AppFilter";
+import App from './App';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <AppMonday02 />
+        <App />
     </React.StrictMode>
 );
 

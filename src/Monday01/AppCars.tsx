@@ -1,4 +1,4 @@
-import {CarComponent} from './Components/CarComponent';
+import {CarComponent} from './components/CarComponent';
 
 
 function AppCars() {
