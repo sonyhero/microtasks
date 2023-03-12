@@ -1,6 +1,6 @@
 import React from 'react';
-import {CurrentBankomat} from "./CurrentBankomat";
-import {MoneyType} from "./App";
+import {CurrentBankomat} from './CurrentBankomat';
+import {MoneyType} from './App';
 
 type CityPropsType = {
     data: MoneyType[] //встречаем денюжки
@@ -16,15 +16,17 @@ export const City = (props: CityPropsType) => {
     //     />
     // ))
 
-    let mappedMoney = props.data.map((el,i)=>
-    <div key={i}>{el.value}</div>
+    let mappedMoney = props.data.map((el, i) =>
+        <div key={i}>
+            <div></div>
+            <div>{el.banknotes}</div>
+            <div>{el.value}</div>
+        </div>
     )
 
     return (
         <div>
-            <div>Ну все парни, мапимся -выводим наши денюжки</div>
-            <div>На верстку ПОКА не обращаем внимания , сейчас занимаемся логикой</div>
-            <div >{mappedMoney}</div>
+            <div>{mappedMoney}</div>
         </div>
     );
 };
