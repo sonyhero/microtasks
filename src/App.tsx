@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import {Country} from "./Country";
 
-export type BanknotsType = 'Dollars' | 'RUBLS' | 'All' // создадим типы для banknotes -он может быть 'Dollars', 'RUBLS' или 'All'
+export type BanknotsType = 'All'|'RUBLS'|'Dollars' // создадим типы для banknotes -он может быть 'Dollars', 'RUBLS' или 'All'
 export type MoneyType = {
     banknotes: BanknotsType
-    value: number// не ленимся, убираем заглушку, и пишем правильный тип)
+    value: number // не ленимся, убираем заглушку, и пишем правильный тип)
     number: string// ложку за Димыча, за...
 }
 
@@ -21,17 +21,16 @@ let defaultMoney: MoneyType[] = [  // типизируем
 ]
 
 // типизируем на входе и выходе
-export const moneyFilter = (money: MoneyType[], filterKey: BanknotsType): any => {
-    if(filterKey === "All") return money
-    return money.filter(el=>el.banknotes ===filterKey)
+export const moneyFilter = (money: MoneyType[], filterValue: BanknotsType): MoneyType[] => {
+return (filterValue==='All') ? money : money.filter(el=>el.banknotes===filterValue)
     //если пришел filter со значением 'All', то возвращаем все банкноты
     //return money.filter... ну да, придется фильтровать
 }
 
 function App() {
     // убираем заглушки в типизации и вставляем в качестве инициализационного значения defaultMoney
-    const [money, setMoney] = useState <MoneyType[]>(defaultMoney)
-    const [filterValue, setFilterValue] = useState<any>('')   // по умолчанию указываем все банкноты
+    const [money, setMoney] = useState<MoneyType[]>(defaultMoney)
+    const [filterValue, setFilterValue] = useState<BanknotsType>('All')   // по умолчанию указываем все банкноты
 
     // а вот сейчас притормаживаем. И вдумчиво: константа filteredMoney получает результат функции moneyFilter
     // в функцию передаем деньги и фильтр, по которому ихбудем выдавать(ретёрнуть)
@@ -41,7 +40,6 @@ function App() {
             <Country
                 data={filteredMoney}   //отрисовать будем деньги после фильтрации
                 setFilterValue={setFilterValue}  //useState передаем? Так можно было?!
-
             />
         </div>
     );
