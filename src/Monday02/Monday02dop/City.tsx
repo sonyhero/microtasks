@@ -1,6 +1,7 @@
 import React from 'react';
 import {CurrentBankomat} from './CurrentBankomat';
 import {MoneyType} from './App';
+import styled from 'styled-components';
 
 type CityPropsType = {
     data: MoneyType[] //встречаем денюжки
@@ -16,20 +17,24 @@ export const City = (props: CityPropsType) => {
     //     />
     // ))
 
-    let mappedMoney = props.data.map((el, i) =>
-        <div key={i}>
-            <div></div>
-            <div>{el.banknotes}</div>
-            <div>{el.value}</div>
-        </div>
+    let mappedMoney = props.data.map((el) =>
+        <CurrentBankomat key={el.number} money={el}/>
     )
 
     return (
-        <div>
-            <div>{mappedMoney}</div>
-        </div>
+        <Wrapper>
+            {mappedMoney}
+        </Wrapper>
     );
 };
+
+const Wrapper = styled.div`
+  /* This renders the buttons above... Edit me! */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 30px;
+`
 //1
 // Вроде все норм, но нужно причесать код. Давайте создадим const mappedMoney = props.data.map(el=>el...)
 // Т.е. нам нужно вынести map из вертски, оставив в верстке только mappedMoney
@@ -43,4 +48,4 @@ export const City = (props: CityPropsType) => {
 //3
 // Вроде все норм, ну точнее почти норм- дублирование-это грех. Хотелось бы от него избавиться.
 // И StyledComponents нам в этом отлично поможет, ведь он может принимать пропсы!
-// Как это сделать в документашке
+// Как это сделать в до кументашке
