@@ -16,16 +16,26 @@ type PropsType = {
 }
 
 export function Todolist(props: PropsType) {
-    let [title, setTitle] = useState("")
+    // let [title, setTitle] = useState("")
 
+    let onChangeRef = useRef<HTMLInputElement| null>(null)
+
+    // const addTask = () => {
+    //     props.addTask(title);
+    //     setTitle("");
+    // }
+
+    // Нужна проверка current'а
     const addTask = () => {
-        props.addTask(title);
-        setTitle("");
+        if (onChangeRef.current) {// Нужна проверка current'а
+            props.addTask(onChangeRef.current.value)
+            onChangeRef.current.value=''
+        }
     }
 
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setTitle(e.currentTarget.value)
-    }
+    // const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    //     setTitle(e.currentTarget.value)
+    // }
 
 
     const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -41,9 +51,11 @@ export function Todolist(props: PropsType) {
     return <div>
         <h3>{props.title}</h3>
         <div>
-            <input value={title}
-                   onChange={onChangeHandler}
-                   onKeyDown={onKeyPressHandler}
+            <input
+                //onChange={onChangeHandler}
+                ref={onChangeRef}
+                onKeyDown={onKeyPressHandler}
+
             />
             <button onClick={addTask}>+</button>
         </div>
