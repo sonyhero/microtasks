@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent, useRef, useState} from 'react';
 import {FilterValuesType} from './App';
+import {useAutoAnimate} from '@formkit/auto-animate/react';
 
 type TaskType = {
     id: string
@@ -48,6 +49,8 @@ export const Todolist:React.FC<PropsType>=({children, ...props}) =>{
         }
     }
 
+    const [listRef] = useAutoAnimate<HTMLUListElement>()
+
     const onAllClickHandler = () => props.changeFilter("all");
     const onActiveClickHandler = () => props.changeFilter("active");
     const onCompletedClickHandler = () => props.changeFilter("completed");
@@ -57,6 +60,7 @@ export const Todolist:React.FC<PropsType>=({children, ...props}) =>{
         <h3>{props.title}</h3>
         <div>
             <input
+                //value={title}
                 //onChange={onChangeHandler}
                 ref={onChangeRef}
                 onKeyDown={onKeyPressHandler}
@@ -64,20 +68,20 @@ export const Todolist:React.FC<PropsType>=({children, ...props}) =>{
             />
             <button onClick={addTask}>+</button>
         </div>
-        <ul>
-            {
-                props.tasks.map(t => {
+            <ul ref={listRef}>
+                    {
+                        props.tasks.map(t => {
 
-                    const onClickHandler = () => props.removeTask(t.id)
+                            const onClickHandler = () => props.removeTask(t.id)
 
-                    return <li key={t.id}>
-                        <input type="checkbox" checked={t.isDone}/>
-                        <span>{t.title}</span>
-                        <button onClick={onClickHandler}>x</button>
-                    </li>
-                })
-            }
-        </ul>
+                            return <li key={t.id}>
+                                <input type="checkbox" checked={t.isDone}/>
+                                <span>{t.title}</span>
+                                <button onClick={onClickHandler}>x</button>
+                            </li>
+                        })
+                    }
+            </ul>
         <div>
             <button onClick={onAllClickHandler}>All</button>
             <button onClick={onActiveClickHandler}>Active</button>
