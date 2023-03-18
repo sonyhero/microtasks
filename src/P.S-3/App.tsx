@@ -94,7 +94,7 @@ function App() {
                       changeFilter={changeFilter}
                       addTask={addTask}>
                 <div>
-                    <div>Many intresting information</div>
+                    Many interesting information
                 </div>
             </Todolist>
         </div>

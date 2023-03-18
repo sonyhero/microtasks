@@ -8,16 +8,18 @@ type TaskType = {
 }
 
 type PropsType = {
-    children?:React.ReactNode
+
     title: string
     tasks: Array<TaskType>
     removeTask: (taskId: string) => void
     changeFilter: (value: FilterValuesType) => void
     addTask: (title: string) => void
+    children?:React.ReactNode
 
 }
 
 export const Todolist:React.FC<PropsType>=({children, ...props}) =>{
+
     // let [title, setTitle] = useState("")
 
     let onChangeRef = useRef<HTMLInputElement| null>(null)
@@ -50,7 +52,8 @@ export const Todolist:React.FC<PropsType>=({children, ...props}) =>{
     const onActiveClickHandler = () => props.changeFilter("active");
     const onCompletedClickHandler = () => props.changeFilter("completed");
 
-    return <div>
+    return (
+        <div>
         <h3>{props.title}</h3>
         <div>
             <input
@@ -80,13 +83,9 @@ export const Todolist:React.FC<PropsType>=({children, ...props}) =>{
             <button onClick={onActiveClickHandler}>Active</button>
             <button onClick={onCompletedClickHandler}>Completed</button>
         </div>
-        <div>
-            <div>
-                {children}
-            </div>
-        </div>
+            <div>{children}</div>
     </div>
-}
+    )}
 
 
 
