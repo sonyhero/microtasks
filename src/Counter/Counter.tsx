@@ -1,25 +1,27 @@
 import React, {useState} from 'react';
 import SuperButton from './SuperButton';
 import s from './Counter.module.css'
+import Display from './Display';
 
 export const Counter = () => {
 
-    const [n, setN] = useState<number>(0)
+    const numberMin = 0
+    const numberMax = 5
 
-    const onClickHandlerInc = () => setN(state => state+1)
-    const onClickHandlerReset = () => setN(0)
+    const [number, setNumber] = useState<number>(numberMin)
 
-    const nClassName = (n === 5) ? s.error : s.normal
+    const onClickHandlerInc = () => setNumber(state => state+1)
+    const onClickHandlerReset = () => setNumber(numberMin)
 
-    const incButton = n === 5
+    const nClassName = (number === numberMax) ? s.error : s.normal
 
-    const resetButton = n === 0
+    const incButton = number === numberMax
+
+    const resetButton = number === numberMin
 
     return (
         <div className={s.wrap}>
-            <div className={s.display}>
-                <div className={nClassName}>{n}</div>
-            </div>
+            <Display className={nClassName} number={number}/>
             <div className={s.buttonWrapper}>
                     <SuperButton className={s.inc} disabled={incButton} name={'inc'} callBack={onClickHandlerInc}/>
                     <SuperButton className={s.reset} disabled={resetButton} name={'reset'} callBack={onClickHandlerReset}/>

@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import AppTodolist from './P.S-4/AppTodolist';
+import {Counter} from './Counter/Counter';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <AppTodolist />
+    <Counter />
   </React.StrictMode>
 );
 
