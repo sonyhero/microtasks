@@ -56,14 +56,14 @@ function App() {
 
     function addTask(title: string, todoListId: string) {
         let task = {id: v1(), title: title, isDone: false};
-        setTasks({...tasks, [todoListId]: [task, ...tasks[todoListId]] })
+        setTasks({...tasks, [todoListId]: [task, ...tasks[todoListId]]})
 
         // let newTasks = [task, ...tasks];
         // setTasks(newTasks);
     }
 
     function changeStatus(taskId: string, isDone: boolean, todoListId: string) {
-        setTasks({...tasks, [todoListId]:tasks[todoListId].map(tl => tl.id === taskId ? {...tl, isDone: isDone} : tl) })
+        setTasks({...tasks, [todoListId]: tasks[todoListId].map(tl => tl.id === taskId ? {...tl, isDone: isDone} : tl)})
 
         // let task = tasks.find(t => t.id === taskId);
         // if (task) {
@@ -73,7 +73,7 @@ function App() {
     }
 
     function changeFilter(value: FilterValuesType, todoListId: string) {
-        setTodolists(todolists.map( tl => tl.id === todoListId? {...tl, filter: value} : tl))
+        setTodolists(todolists.map(tl => tl.id === todoListId ? {...tl, filter: value} : tl))
     }
 
 
