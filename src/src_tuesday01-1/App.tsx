@@ -47,18 +47,18 @@ function App() {
     });
 
 
-    function removeTask(id: string) {
+    function removeTask(id: string, todoListId: string) {
         // let filteredTasks = tasks.filter(t => t.id != id);
         // setTasks(filteredTasks);
     }
 
-    function addTask(title: string) {
+    function addTask(title: string, todoListId: string) {
         // let task = {id: v1(), title: title, isDone: false};
         // let newTasks = [task, ...tasks];
         // setTasks(newTasks);
     }
 
-    function changeStatus(taskId: string, isDone: boolean) {
+    function changeStatus(taskId: string, isDone: boolean, todoListId: string) {
         // let task = tasks.find(t => t.id === taskId);
         // if (task) {
         //     task.isDone = isDone;
@@ -67,27 +67,26 @@ function App() {
         // setTasks([...tasks]);
     }
 
-
-    let tasksForTodolist = tasks;
-
-    if (filter === 'active') {
-        tasksForTodolist = tasks.filter(t => t.isDone === false);
-    }
-    if (filter === 'completed') {
-        tasksForTodolist = tasks.filter(t => t.isDone === true);
-    }
-
-    function changeFilter(value: FilterValuesType) {
-        setFilter(value);
+    function changeFilter(value: FilterValuesType, todoListId: string) {
+        setTodolists(todolists.map( tl => tl.id === todoListId? {...tl, filter: value} : tl))
     }
 
 
     return (
         <div className="App">
             {todolists.map(tl => {
+
+                let tasksForTodolist = tasks[tl.id]
+                if (tl.filter === 'active') {
+                    tasksForTodolist = tasks[tl.id].filter(t => !t.isDone);
+                }
+                if (tl.filter === 'completed') {
+                    tasksForTodolist = tasks[tl.id].filter(t => t.isDone);
+                }
+
                 return (
                     <Todolist
-                        key={}{tl.id}
+                        key={tl.id}
                         title={tl.title}
                         todoListId={tl.id}
                         tasks={tasksForTodolist}
