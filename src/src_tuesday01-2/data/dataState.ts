@@ -17,7 +17,7 @@ export const dataState: DataStateType = {
 }
 
 export type DataStateType = {
-    pages: Array<PagesType>
+    pages: PagesType[]
 }
 
 export type PagesType = {
