@@ -22,7 +22,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
-import App from './src_tuesday01-2/App';
+import App from './src_tuesday02-1/App';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
